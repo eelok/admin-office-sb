@@ -1,10 +1,10 @@
 import React from "react";
 import {db} from '../../firebase';
-import {useHistory} from "react-router-dom";
 import DatePickerComponent from "../datePicker/date-picker-component";
 import InputComponent from "../Input/Input-component";
 import './create-concert-style.scss'
 import './concert-preview-style.scss'
+import DatePicker from "react-datepicker";
 
 class CreateConcert extends React.Component {
 
@@ -14,25 +14,25 @@ class CreateConcert extends React.Component {
         this.state = {
             title: '',
             description: '',
-            startDate: new Date(),
+            // startDate: new Date(),
             address: '',
         }
     }
 
-    handleCreateConcert = (event) => {
-        // event.preventDefault();
-        // let formData = new FormData(event.target)
-        // let newConcert = Object.fromEntries(formData);
-        // db.collection('concerts').add(newConcert)
-        //     .then(() => {
-        //         history.push('/news')
-        //     })
-        //     .catch(error => {
-        //         alert(error.message)
-        //     });
+    handleAddConcert = (event) => {
+        event.preventDefault();
+        let formData = new FormData(event.target)
+        let newConcert = Object.fromEntries(formData);
+        db.collection('concerts').add(newConcert)
+            .then(() => {
+                this.props.history.push('/concerts')
+            })
+            .catch(error => {
+                alert(error.message)
+            });
     }
 
-    handleChange = (event) =>{
+    handleChange = (event) => {
         this.setState({
             [event.target.name]: event.target.value
         });
@@ -42,7 +42,7 @@ class CreateConcert extends React.Component {
         return (
             <div className='wrapper'>
                 <h1>enter upcoming concert details</h1>
-                <form onSubmit={this.handleCreateConcert} className='concert-input'>
+                <form onSubmit={this.handleAddConcert} className='concert-input'>
                     <div>
                         <InputComponent
                             type={'text'}
@@ -56,11 +56,8 @@ class CreateConcert extends React.Component {
                     </div>
                     <div>
                         <label>Select Day And Time</label>
-                        <DatePickerComponent
-                            selected={this.state.startDate}
-                            onChange={this.handleChange}
-                            name={'startDate'}
-                        />
+                        {/*<DatePickerComponent*/}
+                        {/*/>*/}
 
                     </div>
                     <div>
@@ -85,9 +82,6 @@ class CreateConcert extends React.Component {
                             onChange={this.handleChange}
                         />
                     </div>
-                    <button type='submit'>Add Concert</button>
-                </form>
-                <form>
                     <div className="news-page">
                         <header className="news__header">
                             <h2 className='main-header'>Preview</h2>
@@ -105,6 +99,7 @@ class CreateConcert extends React.Component {
                             </section>
                         </section>
                     </div>
+                    <button type='submit'>Add Concert</button>
                 </form>
             </div>
         )
