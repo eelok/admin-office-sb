@@ -7,9 +7,9 @@ const DatePickerComponent = ({onChange, name}) => {
     const [startDate, setStartDate] = useState(new Date());
 
     return (
-        <div className='group'>
-            <label className='group__label'>Select Day And Time</label>
-            <DatePicker className='group__input'
+        <div className='input-group'>
+            <label className='input-group__label'>Select Day And Time</label>
+            <DatePicker className='input-group__input'
                 selected={startDate}
                 onChange={(date) => {
                     setStartDate(date);

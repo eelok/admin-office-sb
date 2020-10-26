@@ -3,9 +3,9 @@ import './input-component-style.scss'
 
 const InputComponent = ({type, name, label, value, id, required, onChange}) =>{
     return(
-        <div className='group'>
-            <label className='group__label' htmlFor={id}>{label}</label>
-            <input className='group__input'
+        <div className='input-group'>
+            <label className='input-group__label' htmlFor={id}>{label}</label>
+            <input className='input-group__input'
                    type={type}
                    name={name}
                    value={value}
