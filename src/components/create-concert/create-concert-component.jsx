@@ -3,7 +3,6 @@ import {db} from '../../firebase';
 import DatePickerComponent from "../datePicker/date-picker-component";
 import InputComponent from "../Input/Input-component";
 import './concert-concert-style.scss'
-import DatePicker from "react-datepicker";
 
 class CreateConcert extends React.Component {
 
@@ -13,7 +12,7 @@ class CreateConcert extends React.Component {
         this.state = {
             title: '',
             description: '',
-            // startDate: new Date(),
+            startDate: new Date().toDateString(),
             address: '',
         }
     }
@@ -53,11 +52,10 @@ class CreateConcert extends React.Component {
                         required={true}
                         onChange={this.handleChange}
                     />
-                    <div>
-                        <label>Select Day And Time</label>
-                        {/*<DatePickerComponent*/}
-                        {/*/>*/}
-                    </div>
+                    <DatePickerComponent
+                        onChange={this.handleChange}
+                        name={'startDate'}
+                    />
                     <InputComponent
                         type={'text'}
                         label={'Address'}
@@ -86,7 +84,7 @@ class CreateConcert extends React.Component {
                                 <div className="news__description"><p>{this.state.description}</p></div>
                             </div>
                             <div className="news__details-box">
-                                {/*<div className="news__date-time">{this.state.startDate}</div>*/}
+                                <div className="news__date-time">{this.state.startDate}</div>
                                 <h4 className="news__address">{this.state.address}</h4>
                             </div>
                         </section>
