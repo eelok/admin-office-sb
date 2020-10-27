@@ -16,11 +16,17 @@
 
   &__description{
     font-size: 1.2rem;
-    padding: 0.5rem 0;
+    padding-top: 0.5rem;
   }
 
   &__address{
     font-size: 1.25rem;
+    font-weight: normal;
+  }
+
+  &__day-time{
+    font-size: 1.25rem;
+    padding: 0.5rem 0;
     font-weight: normal;
   }
 

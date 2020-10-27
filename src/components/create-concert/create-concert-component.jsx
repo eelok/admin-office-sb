@@ -1,4 +1,5 @@
 import React from "react";
+import Moment from 'react-moment';
 import {db} from '../../firebase';
 import DatePickerComponent from "../datePicker/date-picker-component";
 import InputComponent from "../Input/Input-component";
@@ -12,16 +13,14 @@ class CreateConcert extends React.Component {
         this.state = {
             title: '',
             description: '',
-            startDate: new Date().toDateString(),
+            startDate: new Date(),
             address: '',
         }
     }
 
     handleAddConcert = (event) => {
         event.preventDefault();
-        let formData = new FormData(event.target)
-        let newConcert = Object.fromEntries(formData);
-        db.collection('concerts').add(newConcert)
+        db.collection('concerts').add(this.state)
             .then(() => {
                 this.props.history.push('/concerts')
             })
@@ -84,7 +83,7 @@ class CreateConcert extends React.Component {
                                 <div className="news__description"><p>{this.state.description}</p></div>
                             </div>
                             <div className="news__details-box">
-                                <div className="news__date-time">{this.state.startDate}</div>
+                                <div className="news__date-time"><Moment format="d MMMM yyyy, HH:mm">{this.state.startDate}</Moment></div>
                                 <h4 className="news__address">{this.state.address}</h4>
                             </div>
                         </section>

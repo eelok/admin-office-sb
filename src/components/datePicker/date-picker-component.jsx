@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import Moment from 'react-moment';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import '../Input/input-component-style.scss';
@@ -16,7 +17,7 @@ const DatePickerComponent = ({onChange, name}) => {
                     onChange({
                         target: {
                             name,
-                            value: date.toDateString()
+                            value: date
                         }
                     });
                 }}
@@ -27,7 +28,7 @@ const DatePickerComponent = ({onChange, name}) => {
                 timeIntervals={15}
                 timeCaption="time"
                 dateFormat="d MMMM yyyy, HH:mm"
-                name={'date-picker'}
+                name={name}
             />
         </div>
     )
