@@ -25,6 +25,15 @@ class AllConcerts extends React.Component {
         });
     }
 
+    onDelete =() => {
+        console.log("delete was called")
+        let concertReference = db.collection('concerts').doc(this.state.doc.id).delete();
+        // let data = concertReference.get();
+        // console.log(data)
+        // concertReference.doc(concert.id).delete()
+
+    }
+
     render() {
         const {concerts} = this.state;
         return (
@@ -36,10 +45,17 @@ class AllConcerts extends React.Component {
                     {
                         concerts.map(item => (
                             <section key={item.id} className="event__container">
-                                <h3 className='event__title'>{item.title}</h3>
-                                <p className='event__description'>{item.description}</p>
-                                <div className="event__day-time"><Moment format="D MMMM yyyy, HH:mm">{item.startDate.toDate()}</Moment></div>
-                                <h3 className='event__address'>{item.address}</h3>
+                                <div className='event__info'>
+                                    <h3 className='event__title'>{item.title}</h3>
+                                    <p className='event__description'>{item.description}</p>
+                                    <div className="event__dt"><Moment className="event__day-time"
+                                            format="D MMMM yyyy, HH:mm">{item.startDate.toDate()}</Moment></div>
+                                    <p className='event__address'>{item.address}</p>
+                                </div>
+                                <div className='event__control'>
+                                    <button onClick={this.onDelete} className="button-delete">&times;</button>
+                                    <button className="button-edit">></button>
+                                </div>
                             </section>
                         ))
                     }

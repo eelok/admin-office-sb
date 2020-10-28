@@ -7,27 +7,71 @@
     box-shadow: 0 0 4px var(--secondary-color-brown-rgba);
     background-color: white;
     border-radius: 2px;
+
+    display: flex;
+    justify-content: space-between;
   }
 
-  &__title{
+  &__control {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 0.3rem;
+  }
+
+  &__info{
+    text-align: left;
+  }
+
+  &__title {
     font-size: 1.5rem;
-    font-weight: bold;
+    padding-bottom: 0.5rem;
   }
 
-  &__description{
-    font-size: 1.2rem;
-    padding-top: 0.5rem;
+  &__description {
+    font-size: 1rem;
   }
 
-  &__address{
-    font-size: 1.25rem;
-    font-weight: normal;
+  &__address {
+    font-size: 1.15rem;
   }
-
-  &__day-time{
-    font-size: 1.25rem;
+  &__dt{
     padding: 0.5rem 0;
-    font-weight: normal;
   }
 
+  &__day-time {
+    font-size: 1.25rem;
+  }
+
+}
+
+.button-delete {
+  height: 60px;
+  width: 60px;
+  text-align: center;
+  font-size: 3rem;
+  color: var(--main-color-brick-red);
+  background-color: white;
+  border-radius: 3px;
+  border: 1px solid var(--main-color-brick-red);
+  cursor: pointer;
+  outline: none;
+}
+.button-delete:hover {
+  background-color: var(--main-color-brick-red);
+  border: 1px solid var(--main-color-brick-red);
+  color: var(--color-white);
+  font-size: 3.3rem;
+  outline: none;
+}
+
+.button-edit {
+  height: 60px;
+  width: 60px;
+  font-size: 3rem;
+  color: var(--secondary-color-choco-brown);
+  background-color: white;
+  border-radius: 3px;
+  border: 1px solid var(--secondary-color-choco-brown);
 }
