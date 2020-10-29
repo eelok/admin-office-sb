@@ -1,19 +1,18 @@
 import React, {useState} from "react";
-import Moment from 'react-moment';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import '../Input/input-component-style.scss';
 
-const DatePickerComponent = ({onChange, name}) => {
-    const [startDate, setStartDate] = useState(new Date());
-
+const DatePickerComponent = ({onChange, name, value}) => {
+    console.log('date value', value);
+    let startDate = value;
     return (
         <div className='input-group'>
             <label className='input-group__label'>Select Day And Time</label>
             <DatePicker className='input-group__input'
                 selected={startDate}
                 onChange={(date) => {
-                    setStartDate(date);
+                    startDate = date;
                     onChange({
                         target: {
                             name,

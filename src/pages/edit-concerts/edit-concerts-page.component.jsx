@@ -1,7 +1,8 @@
-// import React, {useState, useEffect} from 'react'
 import InputComponent from "../../components/Input/Input-component";
 import {db} from '../../firebase';
 import React from 'react';
+import DatePickerComponent from "../../components/datePicker/date-picker-component";
+import { firestore } from 'firebase';
 
 class EditConcert extends React.Component {
 
@@ -9,53 +10,67 @@ class EditConcert extends React.Component {
         super(props);
 
         this.state = {
-            id: this.props.match.params.id,
-            title: '',
-            // description: '',
-            // startDate: new Date(),
-            // address: '',
-        }
+            title: '', description: '', address: '', startDate: firestore.Timestamp.now()
+        };
 
     }
 
     componentDidMount() {
-        let documentReference = db.collection('concerts').doc(this.state.id);
+        let documentReference = db.collection('concerts').doc(this.props.match.params.id);
         let documentPromise = documentReference.get();
         documentPromise.then((documentSnapshot) => {
             if (documentSnapshot.exists) {
-                console.log(documentSnapshot.data());
+                this.setState(documentSnapshot.data()); //пришло с сервера
             }
+
         }).catch(function(error) {
             console.log("Error getting document:", error);
         });
-
-
-        // documentReference.get().then(function(doc){
-        //     if (documentReference.exists) {
-        //         console.log("Document data:" + documentReference.data())
-        //     } else {
-        //         // doc.data() will be undefined in this case
-        //         console.log("No such document!");
-        //     }
-        // }).catch(function(error) {
-        //     console.log("Error getting document:", error);
-        // });
-
-
-
     }
 
-
+    handleChange = (event) => {
+        let v = event.target.value;
+        if (event.target.name === 'startDate') {
+            v = firestore.Timestamp.fromDate(v);
+        }
+        this.setState({
+            [event.target.name]: v
+        })
+    }
     render() {
-        const {title} = this.state;
+        const {title, description, address, startDate} = this.state;
 
         return (
             <div>
                 <InputComponent
                     type={'text'}
                     label={'Title'}
-                    defaultValue={title}
+                    name={'title'}
+                    value={title}
                     id={'title'}
+                    onChange={this.handleChange}
+                />
+                <InputComponent
+                    type={'text'}
+                    label={'Description'}
+                    name={'description'}
+                    value={description}
+                    id={'description'}
+                    onChange={this.handleChange}
+                />
+                <DatePickerComponent
+                    label={'StartDate'}
+                    name={'startDate'}
+                    value={startDate.toDate()}
+                    onChange={this.handleChange}
+                />
+                <InputComponent
+                    type={'text'}
+                    label={'Address'}
+                    name={'address'}
+                    value={address}
+                    id={'address'}
+                    onChange={this.handleChange}
                 />
 
             </div>

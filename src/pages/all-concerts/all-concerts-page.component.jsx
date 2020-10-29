@@ -23,7 +23,6 @@ class AllConcerts extends React.Component {
         }).catch(function (error) {
             console.log("Error getting document:", error);
         });
-        console.log(this.state)
     }
 
     onDelete = (id) => {
