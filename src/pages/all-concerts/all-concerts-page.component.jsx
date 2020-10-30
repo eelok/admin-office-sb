@@ -1,5 +1,5 @@
 import React from "react";
-import {db} from '../firebase.js';
+import {db} from '../../firebase.js';
 import './all-concerts-style.scss'
 import Moment from "react-moment";
 
@@ -25,13 +25,19 @@ class AllConcerts extends React.Component {
         });
     }
 
-    onDelete =() => {
-        console.log("delete was called")
-        let concertReference = db.collection('concerts').doc(this.state.doc.id).delete();
-        // let data = concertReference.get();
-        // console.log(data)
-        // concertReference.doc(concert.id).delete()
+    onDelete = (id) => {
+        if (!window.confirm('are sure you want to delete')) {
+            return;
+        }
+        db.collection('concerts').doc(id).delete()
+            .then(() => {
+                let filteredConcerts = this.state.concerts.filter(item => item.id !== id);
+                this.setState({ concerts: filteredConcerts })
+            });
+    }
 
+    onEdit = (id) => {
+        this.props.history.push(`/concerts/${id}`)
     }
 
     render() {
@@ -49,12 +55,13 @@ class AllConcerts extends React.Component {
                                     <h3 className='event__title'>{item.title}</h3>
                                     <p className='event__description'>{item.description}</p>
                                     <div className="event__dt"><Moment className="event__day-time"
-                                            format="D MMMM yyyy, HH:mm">{item.startDate.toDate()}</Moment></div>
+                                                                       format="D MMMM yyyy, HH:mm">{item.startDate.toDate()}</Moment>
+                                    </div>
                                     <p className='event__address'>{item.address}</p>
                                 </div>
                                 <div className='event__control'>
-                                    <button onClick={this.onDelete} className="button-delete">&times;</button>
-                                    <button className="button-edit">></button>
+                                    <button onClick={() => this.onDelete(item.id)} className="button-delete">&times;</button>
+                                    <button onClick={() => this.onEdit(item.id)} className="button-edit">></button>
                                 </div>
                             </section>
                         ))

@@ -20,7 +20,7 @@
     padding-left: 0.3rem;
   }
 
-  &__info{
+  &__info {
     text-align: left;
   }
 
@@ -36,7 +36,8 @@
   &__address {
     font-size: 1.15rem;
   }
-  &__dt{
+
+  &__dt {
     padding: 0.5rem 0;
   }
 
@@ -46,32 +47,39 @@
 
 }
 
-.button-delete {
-  height: 60px;
-  width: 60px;
+.button-delete,
+.button-edit {
+  height: 50px;
+  width: 50px;
+  font-size: 2.8rem;
   text-align: center;
-  font-size: 3rem;
-  color: var(--main-color-brick-red);
-  background-color: white;
   border-radius: 3px;
-  border: 1px solid var(--main-color-brick-red);
+  background-color: white;
   cursor: pointer;
   outline: none;
 }
-.button-delete:hover {
-  background-color: var(--main-color-brick-red);
+
+.button-delete {
+  margin-bottom: 1rem;
+  color: var(--main-color-brick-red);
   border: 1px solid var(--main-color-brick-red);
-  color: var(--color-white);
-  font-size: 3.3rem;
-  outline: none;
 }
 
 .button-edit {
-  height: 60px;
-  width: 60px;
-  font-size: 3rem;
   color: var(--secondary-color-choco-brown);
-  background-color: white;
-  border-radius: 3px;
   border: 1px solid var(--secondary-color-choco-brown);
+}
+
+.button-delete:hover {
+  color: var(--color-white);
+  background-color: var(--main-color-brick-red);
+  border: 1px solid var(--main-color-brick-red);
+  outline: none;
+}
+
+.button-edit:hover {
+  color: var(--color-white);
+  background-color: var(--secondary-color-choco-brown);
+  border: 1px solid var(--secondary-color-choco-brown);
+  outline: none;
 }
