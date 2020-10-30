@@ -40,12 +40,13 @@
     font-size: 1.2rem;
     padding: 0.8rem 5rem;
     border-radius: 3px;
-    border: 1px solid var(--color-black);
+    border: 1px solid var(--color-brick-red-bnt-hover);
     background-color: var(--main-color-brick-red);
     color: var(--color-white);
+    text-transform: uppercase;
     cursor: pointer;
 }
 .btn:hover{
-    border: 1px solid var(--secondary-color-choco-brown);
+    border: 1px solid var(--main-color-brick-red);
     background-color: var(--color-brick-red-bnt-hover);
 }
