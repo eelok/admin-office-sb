@@ -52,3 +52,12 @@
     border: 1px solid var(--main-color-brick-red);
     background-color: var(--color-brick-red-bnt-hover);
 }
+
+.main {
+    transition: transform 0.5s;
+    transform: translate(0);
+}
+
+.main--open {
+    transform: translate(250px);
+}

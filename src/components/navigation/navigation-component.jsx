@@ -1,18 +1,17 @@
 import React, {useState} from 'react';
 import {Link} from "react-router-dom";
-import './navigation-style.scss'
+import './navigation-style.scss';
 import {ReactComponent as MenuIcon} from "../../assets/menu002.svg";
 
 const Navigation = ({onMenuOpen, onMenuClosed}) => {
-  let [sideMenuWidth, setSideMenuWidth] = useState('0');
+  let [menuOpen, setMenuOpen] = useState(false);
 
   const openSlideMenu = () => {
-    let sidebarWidth = '250px';
-    setSideMenuWidth(sidebarWidth);
-    onMenuOpen(sidebarWidth);
+    setMenuOpen(true);
+    onMenuOpen();
   }
   const closeSlideMenu = () => {
-    setSideMenuWidth('0')
+    setMenuOpen(false);
     onMenuClosed();
   }
 
@@ -28,11 +27,11 @@ const Navigation = ({onMenuOpen, onMenuClosed}) => {
         {/*    <li><Link className='navbar__link' to='/addconcert'>Add Concerts</Link></li>*/}
         {/*</ul>*/}
 
-        <div id='side-menu' className='side-nav' style={{width: sideMenuWidth}}>
+        <div id='side-menu' className={`side-nav ${menuOpen ? 'side-nav--open' : ''}`}>
           <a href="#" className='side-nav__btn-close' onClick={closeSlideMenu}>&times;</a>
           <Link className='side-nav__link' to='/'>Home</Link>
           <Link className='side-nav__link' to='/concerts'>Concerts</Link>
-          <Link className='side-nav__link' to='/addconcert'>Add_Concerts</Link>
+          <Link className='side-nav__link' to='/addconcert'>Add Concert</Link>
         </div>
       </nav>
   )

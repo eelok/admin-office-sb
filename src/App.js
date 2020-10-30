@@ -7,11 +7,11 @@ import Navigation from "./components/navigation/navigation-component";
 import React, {useState} from "react";
 
 function App() {
-  let [mainMarginLeft, setMainMarginLeft] = useState('0');
+  let [menuOpen, setMenuOpen] = useState(false);
     return (
         <div className="App">
-            <Navigation onMenuOpen={(sidebarWidth) => setMainMarginLeft(sidebarWidth)} onMenuClosed={() => setMainMarginLeft('0')} />
-            <div id="main" style={{marginLeft: mainMarginLeft}}>
+            <Navigation onMenuOpen={() => setMenuOpen(true)} onMenuClosed={() => setMenuOpen(false)} />
+            <div id="main" className={`main ${menuOpen ? 'main--open' : ''}`}>
               <Switch>
                   <Route exact={true} path='/addconcert' component={CreateConcert}/>
                   <Route exact={true} path='/concerts' component={AllConcerts}/>
