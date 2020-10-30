@@ -8,9 +8,11 @@ class EditConcert extends React.Component {
 
     constructor(props) {
         super(props);
-
         this.state = {
-            title: '', description: '', address: '', startDate: firestore.Timestamp.now()
+            title: '',
+            description: '',
+            address: '',
+            startDate: firestore.Timestamp.now()
         };
 
     }
@@ -22,7 +24,6 @@ class EditConcert extends React.Component {
             if (documentSnapshot.exists) {
                 this.setState(documentSnapshot.data()); //пришло с сервера
             }
-
         }).catch(function(error) {
             console.log("Error getting document:", error);
         });
@@ -37,11 +38,23 @@ class EditConcert extends React.Component {
             [event.target.name]: v
         })
     }
+
+    handleSave = (event) => {
+        event.preventDefault()
+        db.collection('concerts').doc(this.props.match.params.id).set(this.state)
+            .then(() => {
+                this.props.history.push('/concerts')
+            })
+            .catch(error => {
+                alert(error.message)
+            });
+
+    }
     render() {
         const {title, description, address, startDate} = this.state;
 
         return (
-            <div>
+            <form onSubmit={this.handleSave}>
                 <InputComponent
                     type={'text'}
                     label={'Title'}
@@ -72,8 +85,8 @@ class EditConcert extends React.Component {
                     id={'address'}
                     onChange={this.handleChange}
                 />
-
-            </div>
+                <button className='btn' type='submit'>Save</button>
+            </form>
         )
     }
 
