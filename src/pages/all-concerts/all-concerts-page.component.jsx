@@ -43,7 +43,7 @@ class AllConcerts extends React.Component {
     render() {
         const {concerts} = this.state;
         return (
-            <div className='page-wrapper' id='main'>
+            <div className='page-wrapper'>
                 <header className="page-header">
                     <h2 className='main-title'>Concerts:</h2>
                 </header>
