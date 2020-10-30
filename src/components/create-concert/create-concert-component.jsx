@@ -89,7 +89,7 @@ class CreateConcert extends React.Component {
                         </section>
                     </section>
                     <div className="button-group">
-                        <button className='btn ' type='submit'>Add Concert</button>
+                        <button className='btn' type='submit'>Add Concert</button>
                     </div>
                 </form>
             </div>

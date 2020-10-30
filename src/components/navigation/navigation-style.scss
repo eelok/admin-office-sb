@@ -1,0 +1,82 @@
+.navbar {
+  background-color: var(--blue-color);
+  overflow: hidden;
+  height: 60px;
+  box-shadow: 0 0 6px var(--secondary-color-brown-rgba);
+
+  &__menu-icon {
+    height: 50px;
+    width: 50px;
+    padding: 0.7rem;
+    margin: 0.3rem;
+    cursor: pointer;
+    border-radius: 2px;
+    border: 1px solid var(--color-black);
+  }
+
+  &__open-slide {
+
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 0 0 0;
+    list-style: none;
+  }
+
+  &__link {
+    text-decoration: none;
+    padding: 16px 14px;
+    font-size: 1.2rem;
+  }
+
+}
+
+.side-nav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background-color: #111;
+  opacity: 0.9;
+  overflow-x: hidden;
+  padding-top: 80px;
+  transition: 0.5s;
+
+  display: flex;
+  flex-direction: column;
+
+  &__link {
+    padding: 10px 10px 10px 30px;
+    text-decoration: none;
+    font-size: 22px;
+    color: #ccc;
+    display: block;
+    transition: 0.3s;
+  }
+
+  &__link:hover {
+    color: #fff;
+  }
+
+  &__btn-close {
+    font-size: 40px;
+    position: absolute;
+    top: 10px;
+    right: 22px;
+    margin-left: 50px;
+    color: #ccc;
+    text-decoration: none;
+  }
+
+  &__btn-close:hover {
+    color: #fff;
+  }
+}
+#main{
+  transition: margin-left 0.5s;
+}

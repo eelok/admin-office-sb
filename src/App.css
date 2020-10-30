@@ -1,7 +1,9 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
+
 
 :root {
     --main-color-brick-red: #AD2118;
@@ -14,11 +16,11 @@
     --color-black: #111;
     --color-light-grey: rgba(233, 230, 223, 0.4);
     --instagram-color: #bc2a8d;
-    --vk-color: #4c75a3;
     --youtube-color: #c4302b;
+    --vk-color: #4c75a3;
     --link-color: #2466AE;
+    --blue-color: #3b5998;
 }
-
 .main-title {
     font-size: 1.5rem;
     text-align: left;

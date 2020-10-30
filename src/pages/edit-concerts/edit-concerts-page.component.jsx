@@ -2,7 +2,8 @@ import InputComponent from "../../components/Input/Input-component";
 import {db} from '../../firebase';
 import React from 'react';
 import DatePickerComponent from "../../components/datePicker/date-picker-component";
-import { firestore } from 'firebase';
+import {firestore} from 'firebase';
+import './edit-page-style.scss';
 
 class EditConcert extends React.Component {
 
@@ -24,7 +25,7 @@ class EditConcert extends React.Component {
             if (documentSnapshot.exists) {
                 this.setState(documentSnapshot.data()); //пришло с сервера
             }
-        }).catch(function(error) {
+        }).catch(function (error) {
             console.log("Error getting document:", error);
         });
     }
@@ -50,43 +51,48 @@ class EditConcert extends React.Component {
             });
 
     }
+
     render() {
         const {title, description, address, startDate} = this.state;
 
         return (
-            <form onSubmit={this.handleSave}>
-                <InputComponent
-                    type={'text'}
-                    label={'Title'}
-                    name={'title'}
-                    value={title}
-                    id={'title'}
-                    onChange={this.handleChange}
-                />
-                <InputComponent
-                    type={'text'}
-                    label={'Description'}
-                    name={'description'}
-                    value={description}
-                    id={'description'}
-                    onChange={this.handleChange}
-                />
-                <DatePickerComponent
-                    label={'StartDate'}
-                    name={'startDate'}
-                    value={startDate.toDate()}
-                    onChange={this.handleChange}
-                />
-                <InputComponent
-                    type={'text'}
-                    label={'Address'}
-                    name={'address'}
-                    value={address}
-                    id={'address'}
-                    onChange={this.handleChange}
-                />
-                <button className='btn' type='submit'>Save</button>
-            </form>
+            <div className='page-wrapper'>
+                <form onSubmit={this.handleSave}>
+                    <InputComponent
+                        type={'text'}
+                        label={'Title'}
+                        name={'title'}
+                        value={title}
+                        id={'title'}
+                        onChange={this.handleChange}
+                    />
+                    <InputComponent
+                        type={'text'}
+                        label={'Description'}
+                        name={'description'}
+                        value={description}
+                        id={'description'}
+                        onChange={this.handleChange}
+                    />
+                    <DatePickerComponent
+                        label={'StartDate'}
+                        name={'startDate'}
+                        value={startDate.toDate()}
+                        onChange={this.handleChange}
+                    />
+                    <InputComponent
+                        type={'text'}
+                        label={'Address'}
+                        name={'address'}
+                        value={address}
+                        id={'address'}
+                        onChange={this.handleChange}
+                    />
+                    <div className='button-box'>
+                        <button className='btn' type='submit'>Save</button>
+                    </div>
+                </form>
+            </div>
         )
     }
 
