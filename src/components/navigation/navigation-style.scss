@@ -1,8 +1,6 @@
 .navbar {
-  background-color: var(--blue-color);
   overflow: hidden;
   height: 60px;
-  box-shadow: 0 0 6px var(--secondary-color-brown-rgba);
 
   &__menu-icon {
     height: 50px;
@@ -11,44 +9,28 @@
     margin: 0.3rem;
     cursor: pointer;
     border-radius: 2px;
-    border: 1px solid var(--color-black);
+    border: 1px solid var(--main-color-brick-red);
   }
-
-  &__open-slide {
-
-  }
-
-  &__nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 8px 0 0 0;
-    list-style: none;
-  }
-
-  &__link {
-    text-decoration: none;
-    padding: 16px 14px;
-    font-size: 1.2rem;
-  }
-
 }
 
 .side-nav {
+  width: 250px;
+  transform: translate(-250px);
+
   height: 100%;
-  width: 0;
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 10;
   background-color: #111;
-  opacity: 0.9;
   overflow-x: hidden;
   padding-top: 80px;
   transition: 0.5s;
+  z-index: 2;
 
-  display: flex;
-  flex-direction: column;
+  &--open {
+    transform: translate(0);
+  }
+
 
   &__link {
     padding: 10px 10px 10px 30px;
@@ -76,7 +58,4 @@
   &__btn-close:hover {
     color: #fff;
   }
-}
-#main{
-  transition: margin-left 0.5s;
 }

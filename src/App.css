@@ -52,3 +52,28 @@
     border: 1px solid var(--main-color-brick-red);
     background-color: var(--color-brick-red-bnt-hover);
 }
+
+.main {
+    transition: transform 0.5s;
+    transform: translate(0);
+}
+
+.main--open {
+    transform: translate(250px);
+    background-color: rgba(0,0,0,0.4);
+}
+
+.overlay {
+    opacity: 0;
+    background-color: rgba(0,0,0, 0.85);
+    transition: opacity 1s;
+    z-index: 1;
+}
+.overlay.overlay--open {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 0.9;
+}
