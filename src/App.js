@@ -9,12 +9,19 @@ import './App.css';
 function App() {
     let [menuOpen, setMenuOpen] = useState(false);
 
+    const handleOnMeinContentClick = () => {
+        setMenuOpen(false);
+    }
+
     return (
         <div className="App">
-            <div className={`overlay ${menuOpen ? 'overlay--open' : ''}`}/>
+            <div className={`overlay ${menuOpen ? 'overlay--open' : ''}`}
+                 onClick={handleOnMeinContentClick}
+            />
             <Navigation
                 onMenuOpen={() => setMenuOpen(true)}
                 onMenuClose={() => setMenuOpen(false)}
+                isMenuOpen={menuOpen}
             />
             <div className={`main ${menuOpen ? 'main--open' : ''}`}>
                 <Switch>
