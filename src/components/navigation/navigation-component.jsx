@@ -18,7 +18,7 @@ const Navigation = ({onMenuOpen, onMenuClose, isMenuOpen}) => {
             <div id='side-menu' className={`side-nav ${isMenuOpen ? 'side-nav--open' : ''}`}>
                 <div className='side-nav__btn-close' onClick={closeSlideMenu}>&times;</div>
                 <Link className='side-nav__link' to='/'>Concerts</Link>
-                <Link className='side-nav__link' to='/addconcert'>Add Concerts</Link>
+                <Link className='side-nav__link' to='/addconcert'>Add Concert</Link>
             </div>
         </nav>
     )

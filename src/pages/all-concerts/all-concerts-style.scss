@@ -8,20 +8,7 @@
     background-color: white;
     border-radius: 2px;
 
-    display: flex;
-    justify-content: space-between;
-  }
-
-  &__control {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    padding-left: 0.3rem;
-  }
-
-  &__info {
-    text-align: left;
+    position: relative;
   }
 
   &__title {
@@ -47,33 +34,22 @@
 
 }
 
-.button-delete,
-.button-edit {
+.button-delete {
   height: 50px;
   width: 50px;
-  font-size: 3.5rem;
-  text-align: center;
-  background-color: white;
+  font-size: 3rem;
+  background-color: transparent;
+  color: var(--main-color-brick-red);
   cursor: pointer;
   border: none;
   outline: none;
-}
 
-.button-delete {
-  margin-bottom: 1rem;
-  color: var(--main-color-brick-red);
-}
-
-.button-edit {
-  color: var(--secondary-color-choco-brown);
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 .button-delete:hover {
-  font-size: 3rem;
-  outline: none;
-}
-
-.button-edit:hover {
   font-size: 3rem;
   outline: none;
 }

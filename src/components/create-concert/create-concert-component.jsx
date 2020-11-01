@@ -22,7 +22,7 @@ class CreateConcert extends React.Component {
         event.preventDefault();
         db.collection('concerts').add(this.state)
             .then(() => {
-                this.props.history.push('/concerts')
+                this.props.history.push('/')
             })
             .catch(error => {
                 alert(error.message)
