@@ -61,7 +61,7 @@ class AllConcerts extends React.Component {
                                 </div>
                                 <div className='event__control'>
                                     <button onClick={() => this.onDelete(item.id)} className="button-delete">&times;</button>
-                                    <button onClick={() => this.onEdit(item.id)} className="button-edit">></button>
+                                    {/*<button onClick={() => this.onEdit(item.id)} className="button-edit">></button>*/}
                                 </div>
                             </section>
                         ))

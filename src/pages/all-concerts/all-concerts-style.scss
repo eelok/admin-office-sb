@@ -51,35 +51,29 @@
 .button-edit {
   height: 50px;
   width: 50px;
-  font-size: 2.8rem;
+  font-size: 3.5rem;
   text-align: center;
-  border-radius: 3px;
   background-color: white;
   cursor: pointer;
+  border: none;
   outline: none;
 }
 
 .button-delete {
   margin-bottom: 1rem;
   color: var(--main-color-brick-red);
-  border: 1px solid var(--main-color-brick-red);
 }
 
 .button-edit {
   color: var(--secondary-color-choco-brown);
-  border: 1px solid var(--secondary-color-choco-brown);
 }
 
 .button-delete:hover {
-  color: var(--color-white);
-  background-color: var(--main-color-brick-red);
-  border: 1px solid var(--main-color-brick-red);
+  font-size: 3rem;
   outline: none;
 }
 
 .button-edit:hover {
-  color: var(--color-white);
-  background-color: var(--secondary-color-choco-brown);
-  border: 1px solid var(--secondary-color-choco-brown);
+  font-size: 3rem;
   outline: none;
 }
