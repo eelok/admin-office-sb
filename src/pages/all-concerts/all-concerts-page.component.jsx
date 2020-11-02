@@ -2,8 +2,8 @@ import React from "react";
 import {db} from '../../firebase.js';
 import './all-concerts-style.scss'
 import Moment from "react-moment";
-import {ReactComponent as AddIcon} from "../../assets/iconfinder_plus_1282963.svg";
-import {ReactComponent as DeleteIcon} from "../../assets/iconfinder_cross_4115230.svg";
+import {ReactComponent as AddIcon} from "../../assets/icon_plus.svg";
+import {ReactComponent as DeleteIcon} from "../../assets/icon_cross.svg";
 
 class AllConcerts extends React.Component {
     constructor(props) {
