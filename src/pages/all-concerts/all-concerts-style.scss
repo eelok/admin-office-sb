@@ -35,16 +35,16 @@
 }
 
 .button-delete {
-  height: 35px;
-  width: 35px;
+  font-size: 3rem;
   background-color: transparent;
   cursor: pointer;
   border: none;
   outline: none;
+  color: var(--secondary-color-choco-brown);
 
   position: absolute;
-  top: 3px;
-  right: 3px;
+  top: -5px;
+  right: 5px;
 }
 
 .button-delete:hover {
@@ -60,7 +60,10 @@
 }
 
 .add-concert{
-  width: 45px;
-  height: 45px;
-  margin-left: 0.5rem;
+  font-size: 3.1rem;
+  margin: 0 0.3rem;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  color: var(--secondary-color-choco-brown);
 }

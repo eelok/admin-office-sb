@@ -3,7 +3,6 @@ import {db} from '../../firebase.js';
 import './all-concerts-style.scss'
 import Moment from "react-moment";
 import {ReactComponent as AddIcon} from "../../assets/icon_plus.svg";
-import {ReactComponent as DeleteIcon} from "../../assets/icon_cross.svg";
 
 class AllConcerts extends React.Component {
     constructor(props) {
@@ -53,7 +52,8 @@ class AllConcerts extends React.Component {
                 <header className="concerts-header">
                     <h2 className='main-title'>Concerts:</h2>
                     <div className="add-concert">
-                        <AddIcon onClick={this.onAddConcert}/>
+                        {/*<AddIcon onClick={this.onAddConcert}/>*/}
+                        &#43;
                     </div>
                 </header>
                 <section className="event">
@@ -68,7 +68,7 @@ class AllConcerts extends React.Component {
                                 </div>
                                 <p className='event__address' onClick={() => this.onEdit(item.id)}>{item.address}</p>
                                 <button onClick={() => this.onDelete(item.id)}
-                                        className="button-delete"><DeleteIcon/></button>
+                                        className="button-delete">&times;</button>
                                 {/*<button onClick={() => this.onEdit(item.id)} className="button-edit">></button>*/}
                                 {/*</div>*/}
                             </section>
