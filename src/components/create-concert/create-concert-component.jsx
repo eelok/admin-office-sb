@@ -3,7 +3,7 @@ import Moment from 'react-moment';
 import {db} from '../../firebase';
 import DatePickerComponent from "../datePicker/date-picker-component";
 import InputComponent from "../Input/Input-component";
-import './concert-concert-style.scss'
+import './create-concert-style.scss'
 
 class CreateConcert extends React.Component {
 
@@ -78,14 +78,12 @@ class CreateConcert extends React.Component {
                     </header>
                     <section className="news">
                         <section className="news__content">
-                            <div className='news__row'>
-                                <div className="news__title"><h3>{this.state.title}</h3></div>
-                                <div className="news__description"><p>{this.state.description}</p></div>
+                            <div className="news__title"><h3>{this.state.title}</h3></div>
+                            <div className="news__description"><p>{this.state.description}</p></div>
+                            <div className="news__date-time">
+                                <Moment format="d MMMM yyyy, HH:mm">{this.state.startDate}</Moment>
                             </div>
-                            <div className="news__details-box">
-                                <div className="news__date-time"><Moment format="d MMMM yyyy, HH:mm">{this.state.startDate}</Moment></div>
-                                <h4 className="news__address">{this.state.address}</h4>
-                            </div>
+                            <p className="news__address">{this.state.address}</p>
                         </section>
                     </section>
                     <div className="button-group">

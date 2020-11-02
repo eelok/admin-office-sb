@@ -35,11 +35,9 @@
 }
 
 .button-delete {
-  height: 50px;
-  width: 50px;
-  font-size: 3rem;
+  height: 35px;
+  width: 35px;
   background-color: transparent;
-  color: var(--main-color-brick-red);
   cursor: pointer;
   border: none;
   outline: none;
@@ -52,4 +50,18 @@
 .button-delete:hover {
   font-size: 3rem;
   outline: none;
+}
+
+.concerts-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem 0 1.5rem;
+}
+
+.add-concert{
+  width: 37px;
+  height: 37px;
+  margin-left: 0.5rem;
+  color: var(--main-color-brick-red);
 }
