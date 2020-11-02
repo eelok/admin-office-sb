@@ -27,22 +27,29 @@
   transition: 0.5s;
   z-index: 2;
 
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
   &--open {
     transform: translate(0);
   }
 
 
   &__link {
-    padding: 10px 10px 10px 30px;
+    margin: 0.5rem 2rem;
+    padding: 0.5rem;
     text-decoration: none;
     font-size: 22px;
     color: #ccc;
-    display: block;
     transition: 0.3s;
   }
 
   &__link:hover {
     color: #fff;
+    background-color: red;
+
   }
 
   &__btn-close {
