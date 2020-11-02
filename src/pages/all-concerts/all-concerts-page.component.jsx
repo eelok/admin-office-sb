@@ -2,6 +2,8 @@ import React from "react";
 import {db} from '../../firebase.js';
 import './all-concerts-style.scss'
 import Moment from "react-moment";
+import {ReactComponent as AddIcon} from "../../assets/plus.svg";
+import {ReactComponent as DeleteIcon} from "../../assets/cancel.svg";
 
 class AllConcerts extends React.Component {
     constructor(props) {
@@ -51,8 +53,7 @@ class AllConcerts extends React.Component {
                 <header className="concerts-header">
                     <h2 className='main-title'>Concerts:</h2>
                     <div className="add-concert">
-                        {/*<AddIcon onClick={this.onAddConcert}/>*/}
-                        &#43;
+                        <AddIcon onClick={this.onAddConcert}/>
                     </div>
                 </header>
                 <section className="event">
@@ -66,10 +67,9 @@ class AllConcerts extends React.Component {
                                                                    format="D MMMM yyyy, HH:mm">{item.startDate.toDate()}</Moment>
                                 </div>
                                 <p className='event__address' onClick={() => this.onEdit(item.id)}>{item.address}</p>
-                                <button onClick={() => this.onDelete(item.id)}
-                                        className="button-delete">&times;</button>
-                                {/*<button onClick={() => this.onEdit(item.id)} className="button-edit">></button>*/}
-                                {/*</div>*/}
+                                <div onClick={() => this.onDelete(item.id)}
+                                        className="button-delete"><DeleteIcon/>
+                                </div>
                             </section>
                         ))
                     }

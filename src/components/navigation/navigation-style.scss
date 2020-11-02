@@ -38,18 +38,18 @@
 
 
   &__link {
-    margin: 0.5rem 2rem;
-    padding: 0.5rem;
+    margin: 0.2rem 2rem;
+    padding: 1rem 0.5rem 0.5rem 0.5rem;
     text-decoration: none;
     font-size: 22px;
     color: #ccc;
+    border-bottom: 1px solid var(--color-black);
     transition: 0.3s;
   }
 
   &__link:hover {
     color: #fff;
-    background-color: red;
-
+    border-bottom: 1px solid white;
   }
 
   &__btn-close {
@@ -64,4 +64,9 @@
   &__btn-close:hover {
     color: #fff;
   }
+}
+
+.highlight{
+  color: #fff;
+  border-bottom: 1px solid white;
 }
