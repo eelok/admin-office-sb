@@ -61,12 +61,12 @@ class AllConcerts extends React.Component {
                         concerts.map(item => (
                             <section key={item.id} className="event__container">
 
-                                <h3 className='event__title'>{item.title}</h3>
-                                <p className='event__description'>{item.description}</p>
-                                <div className="event__dt"><Moment className="event__day-time"
+                                <h3 className='event__title' onClick={() => this.onEdit(item.id)} >{item.title}</h3>
+                                <p className='event__description' onClick={() => this.onEdit(item.id)}>{item.description}</p>
+                                <div className="event__dt" onClick={() => this.onEdit(item.id)}><Moment className="event__day-time"
                                                                    format="D MMMM yyyy, HH:mm">{item.startDate.toDate()}</Moment>
                                 </div>
-                                <p className='event__address'>{item.address}</p>
+                                <p className='event__address' onClick={() => this.onEdit(item.id)}>{item.address}</p>
                                 <button onClick={() => this.onDelete(item.id)}
                                         className="button-delete"><DeleteIcon/></button>
                                 {/*<button onClick={() => this.onEdit(item.id)} className="button-edit">></button>*/}
