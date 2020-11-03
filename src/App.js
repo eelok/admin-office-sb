@@ -5,6 +5,7 @@ import AllConcerts from "./pages/all-concerts/all-concerts-page.component";
 import EditConcert from "./pages/edit-concerts/edit-concerts-page.component";
 import Navigation from "./components/navigation/navigation-component";
 import './App.css';
+import Login from "./pages/login/login-page-component";
 
 function App() {
     let [menuOpen, setMenuOpen] = useState(false);
@@ -28,6 +29,7 @@ function App() {
                     <Route exact={true} path='/' component={AllConcerts}/>
                     <Route exact={true} path='/addconcert' component={CreateConcert}/>
                     <Route exact={true} path='/concerts/:id' component={EditConcert}/>
+                    <Route exact={true} path='/login' component={Login}/>
                 </Switch>
             </div>
         </div>

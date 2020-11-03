@@ -2,7 +2,6 @@ import React from "react";
 import {db} from '../../firebase.js';
 import './all-concerts-style.scss'
 import Moment from "react-moment";
-import {ReactComponent as AddIcon} from "../../assets/plus.svg";
 
 class AllConcerts extends React.Component {
     constructor(props) {
