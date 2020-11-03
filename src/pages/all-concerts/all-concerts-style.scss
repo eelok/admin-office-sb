@@ -2,11 +2,11 @@
   padding: 0 1rem;
 
   &__container {
-    margin: 1rem 0;
+    margin: 1rem 0 0.7rem 0;
     padding: 1.5rem;
-    box-shadow: 0 0 4px var(--secondary-color-brown-rgba);
+    //box-shadow: 0 0 4px var(--secondary-color-brown-rgba);
     background-color: white;
-    border-radius: 2px;
+    border-radius: 3px;
 
     position: relative;
   }
@@ -32,29 +32,23 @@
     font-size: 1.25rem;
   }
 
+  &__control{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0.5rem 0;
+    margin-top: 1rem;
+  }
+
 }
 
-.button-delete {
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
 
-  position: absolute;
-  top: 5px;
-  right: 5px;
-}
 
-.add-concert{
-  margin-right: 5px;
-  width: 30px;
-  height: 30px;
-  cursor: pointer;
-}
 
 .concerts-header{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5rem 1rem 0 1.5rem;
+  padding: 1rem 1rem 0 1rem;
 }
 

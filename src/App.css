@@ -21,6 +21,7 @@
     --link-color: #2466AE;
     --blue-color: #3b5998;
 }
+
 .main-title {
     font-size: 1.5rem;
     text-align: left;
@@ -48,11 +49,41 @@
     text-transform: uppercase;
     cursor: pointer;
 }
-.btn:hover{
+
+.btn:hover {
     border: 1px solid var(--main-color-brick-red);
     background-color: var(--color-brick-red-bnt-hover);
 }
 
+.button-control {
+    font-size: 1rem;
+    padding: 0.3rem 0.5rem;
+    width: 70px;
+    background-color: #6C757D;
+    color: white;
+    border: 1px solid #6C757D;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.button-control:hover {
+    background-color: #545B62;
+    color: white;
+    border: 1px solid #545B62;
+}
+.add-concert{
+    text-align: center;
+    border: 1px solid var(--main-color-brick-red);
+    color: var(--main-color-brick-red);
+    background-color: white;
+    text-transform: uppercase;
+}
+
+.add-concert:hover{
+    border: 1px solid var(--main-color-brick-red);
+    color: white;
+    background-color: var(--main-color-brick-red);
+}
 .main {
     transition: transform 0.5s;
     transform: translate(0);
@@ -60,15 +91,16 @@
 
 .main--open {
     transform: translate(250px);
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
 .overlay {
     opacity: 0;
-    background-color: rgba(0,0,0, 0.85);
+    background-color: rgba(0, 0, 0, 0.85);
     transition: opacity 1s;
     z-index: 1;
 }
+
 .overlay.overlay--open {
     height: 100%;
     width: 100%;
@@ -77,6 +109,7 @@
     left: 0;
     opacity: 0.9;
 }
+
 .App {
     overflow-x: hidden;
 }
