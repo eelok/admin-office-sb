@@ -10,7 +10,6 @@ const Navigation = ({onMenuOpen, onMenuClose, isMenuOpen, currentUser}) => {
     let urls = [
         {title: 'Concerts', url: '/'},
         {title: 'Add Concert', url: '/addconcert'},
-        ///todo
         {
             title: 'Logout', url: '/login', onClick: () => {
                 auth.signOut();
@@ -27,32 +26,13 @@ const Navigation = ({onMenuOpen, onMenuClose, isMenuOpen, currentUser}) => {
 
     return (
         <nav className='navbar'>
-            {
-                currentUser ?
-                    <MenuIcon className='navbar__menu-icon' onClick={openSlideMenu}/>
-                    :
-                    <SMIcon className='navbar__sm-icon'/>
-            }
-
-            <div className='authorisation-control'>
-                {
-                    !currentUser ?
-                        (<Link className='authorisation-control__item' to='/login'>Login</Link>)
-                        :
-                        (<Link className='authorisation-control__item' to='/logout'
-                               onClick={() => auth.signOut()}
-                        >Logout</Link>)
-
-                }
-
-
-            </div>
+            <MenuIcon className='navbar__menu-icon' onClick={openSlideMenu}/>
             <div id='side-menu' className={`side-nav ${isMenuOpen ? 'side-nav--open' : ''}`}>
                 <div className='side-nav__btn-close' onClick={closeSlideMenu}>&times;</div>
 
                 {urls.map((location) => (
-                    //todo key??
-                    <Link key={location.url} className={`side-nav__link ${location.url === path ? 'highlight' : ''}`} to={location.url}
+                    <Link key={location.url} className={`side-nav__link ${location.url === path ? 'highlight' : ''}`}
+                          to={location.url}
                           onClick={() => {
                               closeSlideMenu();
                               if (location.onClick) {

@@ -27,22 +27,6 @@
   }
 }
 
-.authorisation-control {
-  display: flex;
-  flex-direction: row;
-  font-size: 1.2rem;
-
-  &__item {
-    font-size: 1.25rem;
-    text-decoration: none;
-    color: var(--color-black);
-    padding: 0.5rem;
-  }
-  :last-child{
-    margin-right: 0.5rem;
-  }
-}
-
 .side-nav {
   width: 250px;
   transform: translate(-250px);
