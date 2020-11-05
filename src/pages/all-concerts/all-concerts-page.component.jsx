@@ -6,6 +6,7 @@ import Moment from "react-moment";
 class AllConcerts extends React.Component {
     constructor(props) {
         super(props);
+        this.concertReference = null;
 
         this.state = {
             concerts: [],
@@ -13,8 +14,8 @@ class AllConcerts extends React.Component {
     }
 
     async componentDidMount() {
-        let concertReference = db.collection('concerts');
-        concertReference.orderBy('startDate', 'desc').get().then((querySnapshot) => {
+        this.concertReference = db.collection('concerts');
+        this.concertReference.orderBy('startDate', 'desc').get().then((querySnapshot) => {
             let concerts = [];
             querySnapshot.forEach((doc) => {
                 concerts.push({id: doc.id, ...doc.data()});

@@ -19,7 +19,7 @@ export class Login extends React.Component {
         event.preventDefault()
         const {email, password} = this.state;
         try {
-            let userCredentials = await auth.signInWithEmailAndPassword(email, password);
+            await auth.signInWithEmailAndPassword(email, password);
             this.setState({email: '', password: ''})
         } catch (error) {
             console.log(error)

@@ -1,7 +1,8 @@
-
+import React from 'react';
 import {Link} from "react-router-dom";
 import './navigation-style.scss'
-import {ReactComponent as MenuIcon} from "../../assets/menu002.svg";
+import {ReactComponent as MenuIcon} from "../../assets/menu.svg";
+import {ReactComponent as SMIcon} from "../../assets/smilebusters.svg";
 import {auth} from "../../firebase";
 
 const Navigation = ({onMenuOpen, onMenuClose, isMenuOpen, currentUser}) => {
@@ -9,25 +10,60 @@ const Navigation = ({onMenuOpen, onMenuClose, isMenuOpen, currentUser}) => {
     let urls = [
         {title: 'Concerts', url: '/'},
         {title: 'Add Concert', url: '/addconcert'},
-        {title: 'Login', url: '/login'}
+        ///todo
+        {
+            title: 'Logout', url: '/login', onClick: () => {
+                auth.signOut();
+            }
+        }
     ];
 
     const openSlideMenu = () => {
         onMenuOpen();
     }
     const closeSlideMenu = () => {
-        onMenuClose()
+        onMenuClose();
     }
 
     return (
         <nav className='navbar'>
-            <MenuIcon className='navbar__menu-icon' onClick={openSlideMenu}/>
+            {
+                currentUser ?
+                    <MenuIcon className='navbar__menu-icon' onClick={openSlideMenu}/>
+                    :
+                    <SMIcon className='navbar__sm-icon'/>
+            }
+
+            <div className='authorisation-control'>
+                {
+                    !currentUser ?
+                        (<Link className='authorisation-control__item' to='/login'>Login</Link>)
+                        :
+                        (<Link className='authorisation-control__item' to='/logout'
+                               onClick={() => auth.signOut()}
+                        >Logout</Link>)
+
+                }
+
+
+            </div>
             <div id='side-menu' className={`side-nav ${isMenuOpen ? 'side-nav--open' : ''}`}>
                 <div className='side-nav__btn-close' onClick={closeSlideMenu}>&times;</div>
+
                 {urls.map((location) => (
                     //todo key??
-                    <Link className={`side-nav__link ${location.url === path ? 'highlight' : ''}`} to={location.url} onClick={closeSlideMenu}>{location.title}</Link>
+                    <Link key={location.url} className={`side-nav__link ${location.url === path ? 'highlight' : ''}`} to={location.url}
+                          onClick={() => {
+                              closeSlideMenu();
+                              if (location.onClick) {
+                                  location.onClick();
+                              }
+                          }}
+                    >
+                        {location.title}
+                    </Link>
                 ))}
+
             </div>
         </nav>
     )

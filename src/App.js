@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import {Route, Switch} from 'react-router-dom';
 import CreateConcert from "./components/create-concert/create-concert-component";
 import AllConcerts from "./pages/all-concerts/all-concerts-page.component";
@@ -6,7 +6,8 @@ import EditConcert from "./pages/edit-concerts/edit-concerts-page.component";
 import Navigation from "./components/navigation/navigation-component";
 import './App.css';
 import Login from "./pages/login/login-page-component";
-import {auth} from './firebase.js'
+import {auth} from './firebase.js';
+import { withRouter } from "react-router-dom";
 
 export class App extends React.Component {
 
@@ -14,22 +15,26 @@ export class App extends React.Component {
         super(props);
 
         this.state = {
-            currentUser: null,
+            currentUser: {},
             menuOpen: false
         }
     }
-// todo что делать с currentUser
+
     handleOnMainContentClick = () => {
         this.setState({
             menuOpen: false
-        })
+        });
     }
     unsubscribeFromAuth = null;
 
     componentDidMount() {
         this.unsubscribeFromAuth = auth.onAuthStateChanged(user => {
             this.setState({ currentUser: user});
-
+            if(user === null){
+                this.props.history.push('/login')
+                return;
+            }
+            this.props.history.push('/')
             console.log('USER', user);
         });
     }
@@ -39,8 +44,7 @@ export class App extends React.Component {
     }
 
     render() {
-        let {currentUser, menuOpen} = this.state;
-
+        let {menuOpen} = this.state;
         return (
             <div className="App">
                 <div className={`overlay ${menuOpen ? 'overlay--open' : ''}`}
@@ -67,4 +71,4 @@ export class App extends React.Component {
 
 }
 
-export default App;
+export default withRouter(App);
