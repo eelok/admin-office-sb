@@ -57,6 +57,9 @@ class EditConcert extends React.Component {
 
         return (
             <div className='page-wrapper'>
+                <div className='edit-header'>
+                    <button onClick={() => {this.props.history.push('/')}} className='btn-small'>Back</button>
+                </div>
                 <form onSubmit={this.handleSave}>
                     <InputComponent
                         type={'text'}
@@ -89,7 +92,7 @@ class EditConcert extends React.Component {
                         onChange={this.handleChange}
                     />
                     <div className='button-box'>
-                        <button className='btn' type='submit'>Save</button>
+                        <button className='btn-big' type='submit'>Save</button>
                     </div>
                 </form>
             </div>

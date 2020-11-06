@@ -38,7 +38,7 @@ class CreateConcert extends React.Component {
         return (
             <div className='page-wrapper'>
                 <header className="create-concert-header">
-                    <button className='btn-small'>Back</button>
+                    <button onClick={() => {this.props.history.push('/')}} className='btn-small'>Back</button>
                     <h2 className="main-title">Upcoming Concert</h2>
                 </header>
                 <form onSubmit={this.handleAddConcert} className='concert-input'>

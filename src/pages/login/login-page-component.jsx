@@ -52,7 +52,7 @@ export class Login extends React.Component {
                     value={this.state.password}
                     onChange={this.handleChange}
                 />
-                <button className='btn'>Login</button>
+                <button className='btn-big'>Login</button>
             </form>
         )
     }

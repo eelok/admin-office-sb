@@ -1,5 +1,5 @@
 .button-group {
-  margin: 0.5rem;
+  margin: 1.5rem 0.5rem 0.5rem 0.5rem;
   display: flex;
   justify-content: center;
   align-self: center;
@@ -10,4 +10,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.concert-input{
+  max-width: 500px;
+  margin: 0 auto;
 }
