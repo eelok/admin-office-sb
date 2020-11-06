@@ -1,6 +1,13 @@
-.button-group{
+.button-group {
   margin: 0.5rem;
   display: flex;
   justify-content: center;
   align-self: center;
+}
+
+.create-concert-header {
+  margin: 1rem 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

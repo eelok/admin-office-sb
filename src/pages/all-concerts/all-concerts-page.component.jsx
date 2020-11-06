@@ -51,7 +51,7 @@ class AllConcerts extends React.Component {
             <div className='page-wrapper'>
                 <header className="concerts-header">
                     <h2 className='main-title'>Concerts:</h2>
-                    <div className="button-control add-concert" onClick={this.onAddConcert}>
+                    <div className="btn-small add-concert" onClick={this.onAddConcert}>
                         Add
                     </div>
                 </header>
@@ -68,10 +68,10 @@ class AllConcerts extends React.Component {
                                 </div>
                                 <p className='event__address'>{item.address}</p>
                                 <div className='event__control'>
-                                <button className="button-control event__control-delete" onClick={() => this.onDelete(item.id)}>
+                                <button className="btn-small event__control-delete" onClick={() => this.onDelete(item.id)}>
                                     Delete
                                 </button>
-                                <button className="button-control event__control-edit" onClick={() => this.onEdit(item.id)}>
+                                <button className="btn-small event__control-edit" onClick={() => this.onEdit(item.id)}>
                                     Edit
                                 </button>
                                 </div>

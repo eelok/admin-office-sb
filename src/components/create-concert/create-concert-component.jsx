@@ -37,8 +37,9 @@ class CreateConcert extends React.Component {
     render() {
         return (
             <div className='page-wrapper'>
-                <header className="page-header">
-                    <h2 className="main-title">Enter Upcoming Concert Details:</h2>
+                <header className="create-concert-header">
+                    <button className='btn-small'>Back</button>
+                    <h2 className="main-title">Upcoming Concert</h2>
                 </header>
                 <form onSubmit={this.handleAddConcert} className='concert-input'>
                     <InputComponent
@@ -73,7 +74,7 @@ class CreateConcert extends React.Component {
                         onChange={this.handleChange}
                     />
                      <div className="button-group">
-                        <button className='btn' type='submit'>Add Concert</button>
+                        <button className='btn-big' type='submit'>Add Concert</button>
                     </div>
                 </form>
             </div>
