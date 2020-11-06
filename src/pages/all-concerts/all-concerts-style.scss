@@ -1,14 +1,27 @@
 .event {
-  padding: 0 1rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  @media (min-width: 768px) {
+  }
 
   &__container {
-    margin: 1rem 0 0.7rem 0;
-    padding: 1.5rem;
-    //box-shadow: 0 0 4px var(--secondary-color-brown-rgba);
-    background-color: var(--color-white-paper);
-    border-radius: 3px;
+    margin: 0 0.5rem 0.7rem 0.5rem;
+    padding: 1rem 0.2rem;
+    border-bottom:  0.5px solid var(--main-color-brick-red);
 
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    //todo проблема
+    max-width: 500px;
+
+    @media (min-width: 768px) {
+      flex-basis: 50%;
+      //todo проблема
+      margin-right: 1rem;
+    }
   }
 
   &__title {
@@ -32,23 +45,27 @@
     font-size: 1.25rem;
   }
 
-  &__control{
+  &__control {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 0.5rem 0;
+    justify-content: flex-end;
     margin-top: 1rem;
   }
 
+  &__control-edit {
+    margin-left: 1rem;
+  }
 }
 
 
-
-
-.concerts-header{
+.concerts-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 1rem 0 1rem;
+  margin: 1rem 0.5rem 0.2rem 0.5rem;
+  padding: 0.5rem 0.2rem;
+
+  @media (min-width: 768px) {
+    margin: 0 0.5rem;
+  }
 }
 

@@ -28,7 +28,7 @@
 }
 
 .page-wrapper {
-    /*background-color: var(--color-white-paper);*/
+    margin: 0.5rem;
 }
 
 .page-header {
@@ -59,17 +59,17 @@
     font-size: 1rem;
     padding: 0.3rem 0.5rem;
     width: 70px;
-    background-color: #6C757D;
-    color: white;
-    border: 1px solid #6C757D;
+    background-color: white;
+    color: var(--secondary-color-choco-brown);
+    border: 1px solid var(--secondary-color-choco-brown);
     border-radius: 3px;
     cursor: pointer;
 }
 
 .button-control:hover {
-    background-color: #545B62;
+    background-color: var(--secondary-color-choco-brown);
     color: white;
-    border: 1px solid #545B62;
+    border: 1px solid var(--secondary-color-choco-brown);
 }
 .add-concert{
     text-align: center;
