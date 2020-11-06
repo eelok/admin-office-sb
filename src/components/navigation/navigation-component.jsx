@@ -2,10 +2,9 @@ import React from 'react';
 import {Link} from "react-router-dom";
 import './navigation-style.scss'
 import {ReactComponent as MenuIcon} from "../../assets/menu.svg";
-import {ReactComponent as SMIcon} from "../../assets/smilebusters.svg";
 import {auth} from "../../firebase";
 
-const Navigation = ({onMenuOpen, onMenuClose, isMenuOpen, currentUser}) => {
+const Navigation = ({onMenuOpen, onMenuClose, isMenuOpen}) => {
     const path = window.location.pathname;
     let urls = [
         {title: 'Concerts', url: '/'},

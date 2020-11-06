@@ -1,5 +1,4 @@
 import React from "react";
-import Moment from 'react-moment';
 import {db} from '../../firebase';
 import DatePickerComponent from "../datePicker/date-picker-component";
 import InputComponent from "../Input/Input-component";
@@ -73,20 +72,7 @@ class CreateConcert extends React.Component {
                         required={true}
                         onChange={this.handleChange}
                     />
-                    <header className="page-header padding-small">
-                        <h2 className='main-header'>Preview (Please check the data)</h2>
-                    </header>
-                    <section className="news">
-                        <section className="news__content">
-                            <div className="news__title"><h3>{this.state.title}</h3></div>
-                            <div className="news__description"><p>{this.state.description}</p></div>
-                            <div className="news__date-time">
-                                <Moment format="d MMMM yyyy, HH:mm">{this.state.startDate}</Moment>
-                            </div>
-                            <p className="news__address">{this.state.address}</p>
-                        </section>
-                    </section>
-                    <div className="button-group">
+                     <div className="button-group">
                         <button className='btn' type='submit'>Add Concert</button>
                     </div>
                 </form>
