@@ -6,10 +6,12 @@
 }
 
 .create-concert-header {
-  margin: 1rem 0.5rem;
+  margin: 1rem auto;
+  padding: 0.5rem 0.6rem 0.5rem 0.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 500px;
 }
 
 .concert-input{
