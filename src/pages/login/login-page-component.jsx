@@ -38,27 +38,29 @@ export class Login extends React.Component {
                     <div className='login__header'>
                         <h2 className='login__title'>LOGIN</h2>
                     </div>
-                    <InputComponent
-                        type='email'
-                        label='Email'
-                        id='email'
-                        name='email'
-                        required={true}
-                        value={this.state.email}
-                        onChange={this.handleChange}
-                    />
-                    <InputComponent
-                        type='password'
-                        label='Password'
-                        id="password"
-                        name='password'
-                        required={true}
-                        value={this.state.password}
-                        onChange={this.handleChange}
-                    />
-                    <div className="btn-wrapper">
-                        <button className='btn-big'>Login</button>
-                    </div>
+                    <section className='login__space'>
+                        <InputComponent
+                            type='email'
+                            label='Email'
+                            id='email'
+                            name='email'
+                            required={true}
+                            value={this.state.email}
+                            onChange={this.handleChange}
+                        />
+                        <InputComponent
+                            type='password'
+                            label='Password'
+                            id="password"
+                            name='password'
+                            required={true}
+                            value={this.state.password}
+                            onChange={this.handleChange}
+                        />
+                        <div className="btn-wrapper">
+                            <button className='btn-big'>Login</button>
+                        </div>
+                    </section>
                 </form>
             </div>
         )
