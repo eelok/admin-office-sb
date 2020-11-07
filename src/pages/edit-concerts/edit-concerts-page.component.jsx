@@ -60,7 +60,7 @@ class EditConcert extends React.Component {
                 <div className='edit-header'>
                     <button onClick={() => {this.props.history.push('/')}} className='btn-small'>Back</button>
                 </div>
-                <form onSubmit={this.handleSave}>
+                <form onSubmit={this.handleSave} className='content-box'>
                     <InputComponent
                         type={'text'}
                         label={'Title'}
