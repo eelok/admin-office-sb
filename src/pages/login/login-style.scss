@@ -1,7 +1,31 @@
-.login-wrapper{
+.login{
+  margin: 0 auto;
+  max-width: 500px;
+  max-height: 500px;
+
+  &__header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("https://picsum.photos/id/1079/150/300");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 150px;
+    width: 100%;
+
+  }
+  &__title {
+    font-size: 1.5rem;
+    color: black;
+    text-align: center;
+  }
+
+}
+
+.btn-wrapper{
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  height: 100%;
-  margin: 0.5rem;
+  align-items: center;
+  margin-top: 2rem;
 }
