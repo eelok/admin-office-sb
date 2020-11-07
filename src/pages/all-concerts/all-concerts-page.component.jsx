@@ -2,6 +2,7 @@ import React from "react";
 import {db} from '../../firebase.js';
 import './all-concerts-style.scss'
 import Moment from "react-moment";
+import WithNav from "../with-nav/with-nav";
 
 class AllConcerts extends React.Component {
     constructor(props) {
@@ -48,38 +49,40 @@ class AllConcerts extends React.Component {
     render() {
         const {concerts} = this.state;
         return (
-            <div className='page-wrapper'>
-                <header className="concerts-header">
-                    <h2 className='main-title'>Concerts:</h2>
-                    <div className="btn-small add-concert" onClick={this.onAddConcert}>
-                        Add
-                    </div>
-                </header>
-                <section className="event">
-                    {
-                        concerts.map(item => (
-                            <section key={item.id} className="event__container">
+            <WithNav>
+                <div className='page-wrapper'>
+                    <header className="concerts-header">
+                        <h2 className='main-title'>Concerts:</h2>
+                        <div className="btn-small add-concert" onClick={this.onAddConcert}>
+                            Add
+                        </div>
+                    </header>
+                    <section className="event">
+                        {
+                            concerts.map(item => (
+                                <section key={item.id} className="event__container">
 
-                                <h3 className='event__title'  >{item.title}</h3>
-                                <p className='event__description'>{item.description}</p>
-                                <div className="event__dt">
-                                    <Moment className="event__day-time"
-                                           format="D MMMM yyyy, HH:mm">{item.startDate.toDate()}</Moment>
-                                </div>
-                                <p className='event__address'>{item.address}</p>
-                                <div className='event__control'>
-                                <button className="btn-small event__control-delete" onClick={() => this.onDelete(item.id)}>
-                                    Delete
-                                </button>
-                                <button className="btn-small event__control-edit" onClick={() => this.onEdit(item.id)}>
-                                    Edit
-                                </button>
-                                </div>
-                            </section>
-                        ))
-                    }
-                </section>
-            </div>
+                                    <h3 className='event__title'  >{item.title}</h3>
+                                    <p className='event__description'>{item.description}</p>
+                                    <div className="event__dt">
+                                        <Moment className="event__day-time"
+                                               format="D MMMM yyyy, HH:mm">{item.startDate.toDate()}</Moment>
+                                    </div>
+                                    <p className='event__address'>{item.address}</p>
+                                    <div className='event__control'>
+                                    <button className="btn-small event__control-delete" onClick={() => this.onDelete(item.id)}>
+                                        Delete
+                                    </button>
+                                    <button className="btn-small event__control-edit" onClick={() => this.onEdit(item.id)}>
+                                        Edit
+                                    </button>
+                                    </div>
+                                </section>
+                            ))
+                        }
+                    </section>
+                </div>
+            </WithNav>
         );
     }
 
