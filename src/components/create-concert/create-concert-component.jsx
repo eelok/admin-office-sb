@@ -59,6 +59,8 @@ class CreateConcert extends React.Component {
                         <DatePickerComponent
                             onChange={this.handleChange}
                             name={'startDate'}
+                            label={'Select Day And Time'}
+                            value={this.state.startDate}
                         />
                         <InputComponent
                             type={'text'}
