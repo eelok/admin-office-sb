@@ -45,10 +45,10 @@ class EditConcert extends React.Component {
         event.preventDefault()
         db.collection('concerts').doc(this.props.match.params.id).set(this.state)
             .then(() => {
-                this.props.history.push('/concerts')
+                this.props.history.push('/');
             })
             .catch(error => {
-                alert(error.message)
+                alert(error.message);
             });
 
     }
