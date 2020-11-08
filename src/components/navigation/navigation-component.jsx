@@ -2,6 +2,7 @@ import React from 'react';
 import {Link} from "react-router-dom";
 import './navigation-style.scss'
 import {ReactComponent as MenuIcon} from "../../assets/menu.svg";
+import {ReactComponent as SmIcon} from "../../assets/smilebusters.svg";
 import {auth} from "../../firebase";
 
 const Navigation = ({onMenuOpen, onMenuClose, isMenuOpen}) => {
@@ -25,7 +26,10 @@ const Navigation = ({onMenuOpen, onMenuClose, isMenuOpen}) => {
 
     return (
         <nav className='navbar'>
-            <MenuIcon className='navbar__menu-icon' onClick={openSlideMenu}/>
+            <div className='navbar__icons-box'>
+                <SmIcon className='navbar__sm-icon'/>
+                <MenuIcon className='navbar__menu-icon' onClick={openSlideMenu}/>
+            </div>
             <div id='side-menu' className={`side-nav ${isMenuOpen ? 'side-nav--open' : ''}`}>
                 <div className='side-nav__btn-close' onClick={closeSlideMenu}>&times;</div>
 
