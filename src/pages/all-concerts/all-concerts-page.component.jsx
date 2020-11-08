@@ -3,6 +3,8 @@ import {db} from '../../firebase.js';
 import './all-concerts-style.scss'
 import Moment from "react-moment";
 import WithNav from "../with-nav/with-nav";
+import {confirmAlert} from "react-confirm-alert";
+import 'react-confirm-alert/src/react-confirm-alert.css';
 
 class AllConcerts extends React.Component {
     constructor(props) {
@@ -27,10 +29,26 @@ class AllConcerts extends React.Component {
         });
     }
 
+
+    alertDialog = (id) => {
+        confirmAlert({
+            title: 'Delete this concert?',
+            message: '',
+            buttons: [
+                {
+                    label: 'Yes',
+                    onClick: () => {
+                        this.onDelete(id)
+                    }
+                },
+                {
+                    label: 'No'
+                }
+            ]
+        });
+    };
+
     onDelete = (id) => {
-        if (!window.confirm('are sure you want to delete')) {
-            return;
-        }
         db.collection('concerts').doc(id).delete()
             .then(() => {
                 let filteredConcerts = this.state.concerts.filter(item => item.id !== id);
@@ -70,7 +88,7 @@ class AllConcerts extends React.Component {
                                     </div>
                                     <p className='event__address'>{item.address}</p>
                                     <div className='event__control'>
-                                    <button className="btn-small event__control-delete" onClick={() => this.onDelete(item.id)}>
+                                    <button className="btn-small event__control-delete" onClick={() => this.alertDialog(item.id)}>
                                         Delete
                                     </button>
                                     <button className="btn-small event__control-edit" onClick={() => this.onEdit(item.id)}>
