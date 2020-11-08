@@ -59,3 +59,10 @@
   padding: 0.5rem 0.2rem;
 }
 
+.react-confirm-alert .react-confirm-alert-body {
+  width: auto;
+  margin: 0 15px;
+  button {
+    background-color: #be1e2d;
+  }
+}
