@@ -1,11 +1,14 @@
 import React from 'react';
 import {Link} from "react-router-dom";
+import { useHistory } from 'react-router-dom';
 import './navigation-style.scss'
 import {ReactComponent as MenuIcon} from "../../assets/menu.svg";
 import {ReactComponent as SmIcon} from "../../assets/smilebusters.svg";
 import {auth} from "../../firebase";
 
 const Navigation = ({onMenuOpen, onMenuClose, isMenuOpen}) => {
+
+    const history = useHistory();
     const path = window.location.pathname;
     let urls = [
         {title: 'Concerts', url: '/'},
@@ -27,7 +30,7 @@ const Navigation = ({onMenuOpen, onMenuClose, isMenuOpen}) => {
     return (
         <nav className='navbar'>
             <div className='navbar__icons-box'>
-                <SmIcon className='navbar__sm-icon'/>
+                <SmIcon className='navbar__sm-icon' onClick={() => history.push('/')}/>
                 <MenuIcon className='navbar__menu-icon' onClick={openSlideMenu}/>
             </div>
             <div id='side-menu' className={`side-nav ${isMenuOpen ? 'side-nav--open' : ''}`}>
