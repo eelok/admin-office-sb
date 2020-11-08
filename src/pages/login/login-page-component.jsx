@@ -38,7 +38,7 @@ export class Login extends React.Component {
                     <div className='login__header'>
                         <h2 className='login__title'>LOGIN</h2>
                     </div>
-                    <section className='login__space'>
+                    <section className='login__input-box'>
                         <InputComponent
                             type='email'
                             label='Email'
@@ -57,7 +57,7 @@ export class Login extends React.Component {
                             value={this.state.password}
                             onChange={this.handleChange}
                         />
-                        <div className="btn-wrapper">
+                        <div className="login__btn-wrapper">
                             <button className='btn-big'>Login</button>
                         </div>
                     </section>
