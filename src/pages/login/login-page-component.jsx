@@ -10,19 +10,23 @@ export class Login extends React.Component {
 
         this.state = {
             email: '',
-            password: ''
+            password: '',
+            authorisationIsFail: false,
         }
     }
 
 
     handleAuthentication = async event => {
         event.preventDefault()
-        const {email, password} = this.state;
+        let {email, password, authorisationIsFail} = this.state;
         try {
             await auth.signInWithEmailAndPassword(email, password);
-            this.setState({email: '', password: ''})
+            this.setState({email: '', password: '', authorisationIsFail: false})
         } catch (error) {
-            console.log(error)
+            this.setState({
+                ...this.state,
+                authorisationIsFail: true
+            })
         }
     }
 
@@ -32,6 +36,7 @@ export class Login extends React.Component {
     }
 
     render() {
+        const {email, password, authorisationIsFail} = this.state;
         return (
             <div className='login'>
                 <form className='login__wrapper' onSubmit={this.handleAuthentication}>
@@ -39,13 +44,21 @@ export class Login extends React.Component {
                         <h2 className='login__title'>LOGIN</h2>
                     </div>
                     <section className='login__input-box'>
+                        {
+                            authorisationIsFail ?
+                                (<div className='login__notification'>
+                                    <p>Введен неверно логин или параль</p>
+                                </div>)
+                                :
+                                null
+                        }
                         <InputComponent
                             type='email'
                             label='Email'
                             id='email'
                             name='email'
                             required={true}
-                            value={this.state.email}
+                            value={email}
                             onChange={this.handleChange}
                         />
                         <InputComponent
@@ -54,7 +67,7 @@ export class Login extends React.Component {
                             id="password"
                             name='password'
                             required={true}
-                            value={this.state.password}
+                            value={password}
                             onChange={this.handleChange}
                         />
                         <div className="login__btn-wrapper">

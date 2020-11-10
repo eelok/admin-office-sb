@@ -63,4 +63,13 @@
       width: 100%;
     }
   }
+
+  &__notification{
+    border: 1px solid var(--main-color-brick-red);
+    border-radius: 3px;
+    background-color: rgba(252, 237, 239, 0.4);
+    font-size: 1.1rem;
+    text-align: center;
+    padding: 1rem 0.5rem;
+  }
 }
