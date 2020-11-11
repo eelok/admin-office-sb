@@ -2,15 +2,19 @@ import React, {useState} from "react";
 import InputComponent from "../../components/Input/Input-component";
 import './login-style.scss'
 import {auth} from "../../firebase.js";
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+import Loader from 'react-loader-spinner'
 
 const Login = () => {
 
+    const [loading, setLoading] = useState(false);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [isError, setIsError] = useState(false);
 
     const handleAuthentication = async event => {
         event.preventDefault();
+        setLoading(true);
         try {
             await auth.signInWithEmailAndPassword(email, password);
         } catch (error) {
@@ -33,6 +37,7 @@ const Login = () => {
                             :
                             null
                     }
+                    {(loading && !isError) && <Loader className='login__loader' type="TailSpin" color="#808080" height={80} width={80}/>}
                     <InputComponent
                         type='email'
                         label='Email'
