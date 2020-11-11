@@ -37,7 +37,7 @@ const Login = () => {
                             null
                     }
                     <div className={`login__loader ${loading && !isError ? "login__loader--show" : ""}`}>
-                        <img src={spinner}/>
+                        <img src={spinner} alt='loading_icon'/>
                     </div>
                     <InputComponent
                         type='email'
