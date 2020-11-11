@@ -2,8 +2,7 @@ import React, {useState} from "react";
 import InputComponent from "../../components/Input/Input-component";
 import './login-style.scss'
 import {auth} from "../../firebase.js";
-import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
-import Loader from 'react-loader-spinner'
+import spinner from "../../assets/spinner.gif";
 
 const Login = () => {
 
@@ -37,7 +36,9 @@ const Login = () => {
                             :
                             null
                     }
-                    {(loading && !isError) && <Loader className='login__loader' type="TailSpin" color="#808080" height={80} width={80}/>}
+                    <div className={`login__loader ${loading && !isError ? "login__loader--show" : ""}`}>
+                        <img src={spinner}/>
+                    </div>
                     <InputComponent
                         type='email'
                         label='Email'
