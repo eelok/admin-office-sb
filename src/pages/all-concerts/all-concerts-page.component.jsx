@@ -32,17 +32,17 @@ class AllConcerts extends React.Component {
 
     alertDialog = (id) => {
         confirmAlert({
-            title: 'Delete this concert?',
+            title: 'Удалить Это Мероприятие?',
             message: '',
             buttons: [
                 {
-                    label: 'Yes',
+                    label: 'да',
                     onClick: () => {
                         this.onDelete(id)
                     }
                 },
                 {
-                    label: 'No'
+                    label: 'нет'
                 }
             ]
         });

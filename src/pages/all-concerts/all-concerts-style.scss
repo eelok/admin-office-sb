@@ -62,7 +62,10 @@
 .react-confirm-alert .react-confirm-alert-body {
   width: auto;
   margin: 0 15px;
+  background-color: #111111;
+  color: var(--color-white-paper);
   button {
     background-color: #be1e2d;
+    font-size: 1.2rem;
   }
 }
