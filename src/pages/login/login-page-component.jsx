@@ -26,7 +26,7 @@ const Login = () => {
         <div className='login'>
             <form className='login__wrapper' onSubmit={handleAuthentication}>
                 <div className='login__header'>
-                    <h2 className='login__title'>LOGIN</h2>
+                    <h2 className='login__title'>Приветствую тебя <span>smilebusters</span> управляющий</h2>
                 </div>
                 <section className='login__input-box'>
                     {
@@ -42,7 +42,7 @@ const Login = () => {
                     </div>
                     <InputComponent
                         type='email'
-                        label='Е-mail'
+                        label='Эл. почта'
                         id='email'
                         name='email'
                         required={true}
