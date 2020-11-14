@@ -54,7 +54,6 @@
 .btn-small {
     font-size: 1rem;
     padding: 0.3rem 0.5rem;
-    width: 70px;
     background-color: white;
     color: var(--secondary-color-choco-brown);
     border: 1px solid var(--secondary-color-choco-brown);

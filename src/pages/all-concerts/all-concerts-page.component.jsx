@@ -70,9 +70,9 @@ class AllConcerts extends React.Component {
             <WithNav>
                 <div className='page-wrapper'>
                     <header className="concerts-header">
-                        <h2 className='main-title'>Concerts:</h2>
+                        <h2 className='main-title'>Концерты:</h2>
                         <div className="btn-small add-concert" onClick={this.onAddConcert}>
-                            Add
+                            Добавить
                         </div>
                     </header>
                     <section className="event">
@@ -89,10 +89,10 @@ class AllConcerts extends React.Component {
                                     <p className='event__address'>{item.address}</p>
                                     <div className='event__control'>
                                     <button className="btn-small event__control-delete" onClick={() => this.alertDialog(item.id)}>
-                                        Delete
+                                        Удалить
                                     </button>
                                     <button className="btn-small event__control-edit" onClick={() => this.onEdit(item.id)}>
-                                        Edit
+                                        Изменить
                                     </button>
                                     </div>
                                 </section>

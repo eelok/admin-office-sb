@@ -62,13 +62,13 @@ class EditConcert extends React.Component {
                     <div className='edit-header'>
                         <button onClick={() => {
                             this.props.history.push('/')
-                        }} className='btn-small'>Back
+                        }} className='btn-small'>Назад
                         </button>
                     </div>
                     <form onSubmit={this.handleSave} className='content-box'>
                         <InputComponent
                             type={'text'}
-                            label={'Title'}
+                            label={'Название'}
                             name={'title'}
                             value={title}
                             id={'title'}
@@ -76,28 +76,28 @@ class EditConcert extends React.Component {
                         />
                         <InputComponent
                             type={'text'}
-                            label={'Description'}
+                            label={'Описание'}
                             name={'description'}
                             value={description}
                             id={'description'}
                             onChange={this.handleChange}
                         />
                         <DatePickerComponent
-                            label={'StartDate'}
+                            label={'День и Время'}
                             name={'startDate'}
                             value={startDate.toDate()}
                             onChange={this.handleChange}
                         />
                         <InputComponent
                             type={'text'}
-                            label={'Address'}
+                            label={'Адрес'}
                             name={'address'}
                             value={address}
                             id={'address'}
                             onChange={this.handleChange}
                         />
                         <div className='button-box'>
-                            <button className='btn-big' type='submit'>Save</button>
+                            <button className='btn-big' type='submit'>Сохранить</button>
                         </div>
                     </form>
                 </div>

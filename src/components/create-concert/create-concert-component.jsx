@@ -42,14 +42,14 @@ class CreateConcert extends React.Component {
                     <header className="create-concert-header">
                         <button onClick={() => {
                             this.props.history.push('/')
-                        }} className='btn-small'>Back
+                        }} className='btn-small'>Назад
                         </button>
-                        <h2 className="main-title">Upcoming Concert</h2>
+                        <h2 className="main-title">Новый Концерт</h2>
                     </header>
                     <form onSubmit={this.handleAddConcert} className='concert-input'>
                         <InputComponent
                             type={'text'}
-                            label={'Title'}
+                            label={'Название'}
                             name={'title'}
                             value={this.state.title}
                             id={'title'}
@@ -59,12 +59,12 @@ class CreateConcert extends React.Component {
                         <DatePickerComponent
                             onChange={this.handleChange}
                             name={'startDate'}
-                            label={'Select Day And Time'}
+                            label={'День и Время'}
                             value={this.state.startDate}
                         />
                         <InputComponent
                             type={'text'}
-                            label={'Address'}
+                            label={'Адрес'}
                             name={'address'}
                             value={this.state.address}
                             id={'address'}
@@ -73,7 +73,7 @@ class CreateConcert extends React.Component {
                         />
                         <InputComponent
                             type={'text'}
-                            label={'Description'}
+                            label={'Описание'}
                             name={'description'}
                             value={this.state.description}
                             id={'description'}
@@ -81,7 +81,7 @@ class CreateConcert extends React.Component {
                             onChange={this.handleChange}
                         />
                         <div className="button-group">
-                            <button className='btn-big' type='submit'>Add Concert</button>
+                            <button className='btn-big' type='submit'>Сохранить</button>
                         </div>
                     </form>
                 </div>

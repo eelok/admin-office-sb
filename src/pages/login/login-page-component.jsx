@@ -18,6 +18,7 @@ const Login = () => {
             await auth.signInWithEmailAndPassword(email, password);
         } catch (error) {
             setIsError(true);
+            setLoading(false);
         }
     }
 
@@ -36,7 +37,7 @@ const Login = () => {
                             :
                             null
                     }
-                    <div className={`login__loader ${loading && !isError ? "login__loader--show" : ""}`}>
+                    <div className={`login__loader ${loading ? "login__loader--show" : ""}`}>
                         <img src={spinner} alt='loading_icon'/>
                     </div>
                     <InputComponent
