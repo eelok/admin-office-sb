@@ -31,7 +31,7 @@ const Login = () => {
                 <section className='login__input-box'>
                     {
                         isError ?
-                            (<div className='login__notification'>
+                            (<div className='input-group login__notification'>
                                 <p>Введен неверно логин или параль</p>
                             </div>)
                             :
