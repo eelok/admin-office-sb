@@ -11,10 +11,10 @@ const Navigation = ({onMenuOpen, onMenuClose, isMenuOpen}) => {
     const history = useHistory();
     const path = window.location.pathname;
     let urls = [
-        {title: 'Concerts', url: '/'},
-        {title: 'Add Concert', url: '/addconcert'},
+        {title: 'Концерты', url: '/'},
+        {title: 'Добавить Концерт', url: '/addconcert'},
         {
-            title: 'Logout', url: '/login', onClick: () => {
+            title: 'Выход', url: '/login', onClick: () => {
                 auth.signOut();
             }
         }
