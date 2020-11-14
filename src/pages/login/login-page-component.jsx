@@ -42,7 +42,7 @@ const Login = () => {
                     </div>
                     <InputComponent
                         type='email'
-                        label='Email'
+                        label='Е-mail'
                         id='email'
                         name='email'
                         required={true}
@@ -50,14 +50,14 @@ const Login = () => {
                     />
                     <InputComponent
                         type='password'
-                        label='Password'
+                        label='Пароль'
                         id="password"
                         name='password'
                         required={true}
                         onChange={e => setPassword(e.target.value)}
                     />
                     <div className="login__btn-wrapper">
-                        <button className='btn-big'>Login</button>
+                        <button className='btn-big'>Войти</button>
                     </div>
                 </section>
             </form>

@@ -14,7 +14,7 @@ const Navigation = ({onMenuOpen, onMenuClose, isMenuOpen}) => {
         {title: 'Концерты', url: '/'},
         {title: 'Добавить Концерт', url: '/addconcert'},
         {
-            title: 'Выход', url: '/login', onClick: () => {
+            title: 'Выйти', url: '/login', onClick: () => {
                 auth.signOut();
             }
         }
