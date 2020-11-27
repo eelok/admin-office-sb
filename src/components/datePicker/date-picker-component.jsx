@@ -20,7 +20,7 @@ const DatePickerComponent = ({onChange, name, value, label}) => {
                         }
                     });
                 }}
-                minDate={new Date()}
+                // minDate={new Date()}
                 showDisabledMonthNavigation
                 showTimeSelect
                 timeFormat="HH:mm"
